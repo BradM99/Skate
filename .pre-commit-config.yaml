@@ -16,3 +16,7 @@ repos:
         exclude: ^.*/migrations/.*$
     -   id: ruff-format
         exclude: ^.*/migrations/.*$
+-   repo: https://github.com/pycqa/pydocstyle
+    rev: 4.0.0
+    hooks:
+    -   id: pydocstyle
