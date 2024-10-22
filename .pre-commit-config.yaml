@@ -6,12 +6,13 @@ repos:
     -   id: end-of-file-fixer
     -   id: check-yaml
     -   id: check-added-large-files
--   repo: https://github.com/psf/black
-    rev: 22.10.0
+        exclude: docs
+
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.9
     hooks:
-    -   id: black
--   repo: https://github.com/pycqa/flake8
-    rev: 7.1.1
-    hooks:
-    -   id: flake8
-        exclude: ^testing/(data|examples)/
+    -   id: ruff
+        args: [ --fix ]
+        exclude: ^.*/migrations/.*$
+    -   id: ruff-format
+        exclude: ^.*/migrations/.*$
